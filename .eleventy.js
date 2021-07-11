@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
 
   // PASSTHROUGH BUILD COPIES
   eleventyConfig.addPassthroughCopy("./src/assets");
+  eleventyConfig.addPassthroughCopy("./src/admin");
   return {
     dir: {
       input: "src",
