@@ -60,12 +60,10 @@
 /* CODE BLOCK SYNTAX HIGHLIGHTING */
 
 pre[class*="language-"] a.copy-btn {
-  @apply text-indigo-400;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.5em 1em;
-  cursor: pointer;
+  @apply bg-gray-700 text-indigo-300 font-bold absolute cursor-pointer py-1 px-4 border;
+  top: -32px;
+  right: 1px;
+  border: 3px solid #111827;
 }
 
 pre[class*="language-"],
@@ -98,10 +96,11 @@ code[class*="language-"] {
 }
 
 pre[class*="language-"] {
+  @apply bg-gray-900;
   padding: 1em;
-  margin: 1em 0;
-  overflow: auto;
-  background: #1e1e1e;
+  margin: 2.25em 0;
+  /* overflow: auto; */
+  /* background: #1e1e1e; */
   border-radius: 4px;
   box-shadow: 0px 4px 8px -1px rgba(0, 0, 0, 0.3);
   position: relative;

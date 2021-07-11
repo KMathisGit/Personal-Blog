@@ -42,6 +42,9 @@ layout: 'base.njk'
                     .setData("text/plain", codeText);
                 console.log(e.clipboardData.getData("text"))
                 btn.innerText = "copied";
+                setTimeout(() => {
+                    btn.innerText = "copy";
+                }, 2000)
             }
         });
         el.appendChild(copyBtn);
