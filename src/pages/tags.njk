@@ -1,0 +1,20 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - post
+    - featured
+    - all
+permalink: /tags/{{ tag }}/
+---
+
+{% set taglist = collections[tag] %}
+<h1>Tagged “{{ tag }}”</h1>
+
+<ul role="list" class="blog-list">
+    {% for post in taglist | reverse %}
+        {% include 'article-snippet.njk' %}
+    {% endfor %}
+</ul>

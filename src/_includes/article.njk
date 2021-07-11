@@ -1,0 +1,49 @@
+---
+layout: 'base.njk'
+---
+
+<article>
+    <h1>{{title}}</h1>
+    <div class="flex flex-wrap">
+        {% for tag in tags | postTags %}
+            <a href="/tags/{{tag}}" class="category-tag">
+                {{ tag }}
+            </a>
+        {%- endfor -%}
+    </div>
+    <figure>
+        <img src="{{ image }}" alt ="{{ imageAlt }}"/>
+        <figcaption>
+            {{ imageAlt }}
+        </figcaption>
+    </figure>
+
+    {{ content | safe }}
+</article>
+
+<script>
+    const codeBlocks = Array.from(document.querySelectorAll("pre[class*='language-']"));
+    codeBlocks.forEach(el => {
+        const copyBtn = document.createElement("a");
+        copyBtn
+            .classList
+            .add("copy-btn");
+        copyBtn.innerText = "copy";
+        copyBtn.addEventListener("click", function (e) {
+            document.execCommand("copy");
+        });
+        copyBtn.addEventListener("copy", function (e) {
+            const btn = e.target;
+            e.preventDefault();
+            if (e.clipboardData) {
+                const codeText = btn.previousElementSibling.innerText;
+                e
+                    .clipboardData
+                    .setData("text/plain", codeText);
+                console.log(e.clipboardData.getData("text"))
+                btn.innerText = "copied";
+            }
+        });
+        el.appendChild(copyBtn);
+    });
+</script>
