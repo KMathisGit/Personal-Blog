@@ -1,7 +1,7 @@
 ﻿# Personal Blog
- 
- 
+
 Personal blog created using the following tech:
+
 - [11ty](https://www.11ty.dev/) (eleventy) = static site generation
 - [Nunjucks](https://mozilla.github.io/nunjucks/) = template language
 - [Netlify](https://www.netlify.com/) = Hosting
