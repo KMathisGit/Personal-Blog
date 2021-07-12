@@ -3,28 +3,56 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply font-body;
+  }
+
+  /* Text colors */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-white font-bold;
+  }
+
   h1 {
-    @apply text-5xl mb-8;
+    @apply text-6xl mb-6 leading-tight;
+  }
+
+  h3 {
+    @apply text-3xl my-6;
+  }
+
+  button,
+  p a {
+    @apply text-white;
+  }
+
+  p {
+    @apply text-grayFont text-xl;
   }
 
   p a {
-    @apply text-indigo-600 underline;
+    @apply font-bold underline text-xl hover:text-skyBlue;
+    text-decoration-color: rgb(7, 167, 247);
   }
 
   hr {
-    @apply border-2 border-opacity-10 rounded my-4;
+    @apply border-2 opacity-5 text-white rounded my-4;
   }
 
   nav {
-    @apply py-4 sticky top-0 bg-gray-900 text-indigo-400 shadow-lg w-full flex justify-center font-semibold z-10;
+    @apply py-4 sticky top-0 bg-darkerBg text-grayFont shadow-lg w-full flex justify-center font-semibold z-10;
   }
 
   nav .nav-link {
-    @apply cursor-pointer p-2 px-6 ml-4 hover:bg-gray-800;
+    @apply cursor-pointer p-2 px-6 ml-4 hover:bg-darkBg;
   }
 
   ul.blog-list li {
-    @apply shadow-md mb-8 p-6 bg-opacity-40 bg-black rounded;
+    @apply shadow-lg mb-10 p-6 bg-opacity-02 bg-white rounded-lg;
   }
 
   ul.blog-list li article {
@@ -32,11 +60,11 @@
   }
 
   .category-tag {
-    @apply bg-indigo-300 text-gray-800 inline-block rounded-full py-1 px-3 text-sm mr-2 mt-1 font-bold;
+    @apply bg-purple text-white inline-block rounded-full py-1 px-3 text-sm mr-2 mt-1 font-bold;
   }
 
   ul.blog-list li article h3 {
-    @apply text-indigo-400 font-semibold text-2xl;
+    @apply my-0;
   }
 
   ul.blog-list li article h3 span {
@@ -44,14 +72,14 @@
   }
 
   .btn {
-    @apply bg-indigo-800 text-white text-lg py-4 px-8 inline-block font-semibold hover:bg-indigo-600 rounded;
+    @apply bg-purple text-white text-lg py-4 px-8 inline-block font-semibold rounded transform transition-transform scale-100 hover:scale-105;
   }
 }
 
-::selection {
+/* ::selection {
   background-color: rgb(55, 48, 163);
   color: #fff;
-}
+} */
 
 .content-container {
   min-height: calc(100vh - 116px);
@@ -60,7 +88,7 @@
 /* CODE BLOCK SYNTAX HIGHLIGHTING */
 
 pre[class*="language-"] a.copy-btn {
-  @apply bg-gray-700 text-indigo-300 font-bold absolute cursor-pointer py-1 px-4 border;
+  @apply bg-lightBg text-grayFont font-bold absolute cursor-pointer py-1 px-4 border;
   top: -32px;
   right: 1px;
   border: 3px solid #111827;
@@ -96,7 +124,7 @@ code[class*="language-"] {
 }
 
 pre[class*="language-"] {
-  @apply bg-gray-900;
+  @apply bg-lightBg;
   padding: 1em;
   margin: 2.25em 0;
   /* overflow: auto; */

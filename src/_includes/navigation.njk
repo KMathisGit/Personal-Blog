@@ -7,11 +7,11 @@
             <span class="text-white text-xl">Kevin Mathis</span>
         </a>
         <ul class="list-none flex text-lg">
-            <li class="nav-link {% if page.url === '/' %} text-indigo-200 {% endif %}">
+            <li class="nav-link {% if page.url === '/' %} text-white {% endif %}">
                 <a {% if currentUrl === '/' %}aria-current="page"{% endif %} href="/">Home</a>
             </li>
             {% for page in collections.pages | reverse %}
-                <li class="nav-link {% if page.url === currentUrl %} text-indigo-200 {% endif %}">
+                <li class="nav-link {% if page.url === currentUrl %} text-white {% endif %}">
                     <a {% if currentUrl === page.url %}
                             aria-current="page"
                         {% endif %} 

@@ -3,10 +3,9 @@ title: "Kevin's Blog Posts"
 menuItem: "Posts"
 ---
 
-<p class="text-3xl">
+<h3>
     Recent Blog Posts <span class="inline-block transform rotate-90">&#10140;</span>
-</p>
-<br/>
+</h3>
 <ul role="list" class="blog-list">
     {%- for post in collections.post | reverse -%}
         {% include 'article-snippet.njk' %}
