@@ -88,10 +88,11 @@
 /* CODE BLOCK SYNTAX HIGHLIGHTING */
 
 pre[class*="language-"] a.copy-btn {
-  @apply bg-lightBg text-grayFont font-bold absolute cursor-pointer py-1 px-4 border;
+  @apply bg-darkBg text-grayFont font-bold absolute cursor-pointer py-1 px-4 border;
   top: -32px;
   right: 1px;
-  border: 3px solid #111827;
+  border-color: #242629;
+  border-bottom: 1px solid white;
 }
 
 pre[class*="language-"],
@@ -124,7 +125,7 @@ code[class*="language-"] {
 }
 
 pre[class*="language-"] {
-  @apply bg-lightBg;
+  @apply bg-darkBg;
   padding: 1em;
   margin: 2.25em 0;
   /* overflow: auto; */
