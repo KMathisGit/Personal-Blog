@@ -4,8 +4,8 @@ menuItem: "Posts"
 ---
 
 <h3>
-    Recent Blog Posts <span class="inline-block transform rotate-90">&#10140;</span>
-</h3>
+    Recent Blog Posts 
+    {# <span class="inline-block transform rotate-90">&#10140;</span> #}</h3>
 <ul role="list" class="blog-list">
     {%- for post in collections.post | reverse -%}
         {% include 'article-snippet.njk' %}

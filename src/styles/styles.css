@@ -18,15 +18,19 @@
   }
 
   h1 {
-    @apply text-5xl mb-6 leading-tight;
+    @apply text-6xl mb-6 leading-tight;
   }
 
   h2 {
-    @apply text-4xl my-4;
+    @apply text-5xl my-4;
   }
 
   h3 {
-    @apply text-3xl my-6;
+    @apply text-4xl my-6 underline;
+  }
+
+  h4 {
+    @apply text-2xl;
   }
 
   button,
@@ -35,7 +39,7 @@
   }
 
   p {
-    @apply text-grayFont leading-8;
+    @apply text-grayFont leading-8 lg:text-lg xl:text-xl;
   }
 
   p a {

@@ -21,8 +21,8 @@ layout: "base.njk"
 </div>
 <br/>
 <h3>
-    Featured Blog Posts <span class="inline-block transform rotate-90">&#10140;</span>
-</h3>
+    Featured Blog Posts 
+    {# <span class="inline-block transform rotate-90">&#10140;</span> #}</h3>
 <ul role="list" class="blog-list">
     {%- for post in collections.featured | reverse -%}
         {% include 'article-snippet.njk' %}
