@@ -3,14 +3,8 @@ layout: 'base.njk'
 ---
 
 <article>
+    <time class="text-grayFont">{{ date | postDate }}</time>
     <h1>{{title}}</h1>
-    <div class="flex flex-wrap">
-        {% for tag in tags | postTags %}
-            <a href="/tags/{{tag}}" class="category-tag">
-                {{ tag }}
-            </a>
-        {%- endfor -%}
-    </div>
     <figure>
         <img src="{{ image }}" alt ="{{ imageAlt }}"/>
         <figcaption>
