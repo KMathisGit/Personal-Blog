@@ -82,8 +82,16 @@
   }
 
   :not(pre) > code {
-    @apply bg-purple text-white py-1 px-3 rounded;
+    @apply bg-purple text-white py-0.5 px-3 rounded;
   }
+
+  article.blog-post p {
+    @apply my-6 leading-8;
+  }
+
+  /* article.snippet img {
+    @apply rounded;
+  } */
 }
 
 /* ::selection {
@@ -96,7 +104,7 @@
 }
 
 h3.anchor {
-  margin-top: -100px;
+  margin-top: -68px;
   padding-top: 100px;
   text-decoration: none;
 }
@@ -106,7 +114,7 @@ h3.anchor:hover a {
 }
 
 h3.anchor a {
-  @apply px-2 text-grayFont opacity-30 cursor-pointer hidden;
+  @apply px-3 text-grayFont opacity-30 cursor-pointer hidden;
 }
 
 /* CODE BLOCK SYNTAX HIGHLIGHTING */
@@ -149,7 +157,7 @@ code[class*="language-"] {
 pre[class*="language-"] {
   @apply bg-darkerBg;
   padding: 1em;
-  margin: 0 0 2.25em 0;
+  margin: 0 0 3em 0;
   overflow: auto;
   border-radius: 4px;
   box-shadow: 0px 4px 8px -1px rgba(0, 0, 0, 0.3);

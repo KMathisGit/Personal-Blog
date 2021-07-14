@@ -36,6 +36,5 @@ module.exports = function paginate(currentPage, maxPages, totalPages) {
   );
 
   // return object with all pager properties required by the view
-  console.log(pages);
   return pages;
 };

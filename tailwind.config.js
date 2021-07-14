@@ -25,7 +25,7 @@ module.exports = {
       black: colors.black,
       darkerBg: "#141519",
       darkBg: "#16161a",
-      lightBg: "#242629",
+      lightBg: "#1d1e20", //"#242629",
       grayFont: "#94a1b2",
       purple: "#7f5af0",
       skyBlue: "#07a7f7",

@@ -10,7 +10,21 @@
             <li>
                 <a class="cursor-pointer text-lg p-2 px-6 ml-4 hover:bg-lightBg {% if page.url === '/' %} text-white {% endif %}" {% if currentUrl === '/' %}aria-current="page"{% endif %} href="/">Home</a>
             </li>
-            {% for page in collections.pages | reverse %}
+            <li>
+                <a class="cursor-pointer p-2 px-6 ml-4 hover:bg-lightBg {% if isPostPage(page.url) %} text-white {% endif %}"
+                    {% if isPostPage(page.url) %}
+                            aria-current="page"
+                        {% endif %} 
+                        href="/posts/page/1"
+                    >
+                    Posts
+                </a>
+            </li>
+            <li>
+                <a class="cursor-pointer text-lg p-2 px-6 ml-4 hover:bg-lightBg" href="https://kmathis-portfolio.vercel.app">About</a>
+            </li>
+
+            {# {% for page in collections.pages | reverse %}
                 <li>
                     <a class="cursor-pointer p-2 px-6 ml-4 hover:bg-lightBg {% if page.url === currentUrl %} text-white {% endif %}"
                     {% if currentUrl === page.url %}
@@ -21,10 +35,8 @@
                         {{ page.data.menuItem }}
                     </a>
                 </li>
-            {%- endfor %}
-            <li>
-                <a class="cursor-pointer text-lg p-2 px-6 ml-4 hover:bg-lightBg" href="https://kmathis-portfolio.vercel.app">About</a>
-            </li>
+            {%- endfor %} #}
+
         </ul>
     </div>
 </nav>

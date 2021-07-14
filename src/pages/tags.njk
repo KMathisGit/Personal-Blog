@@ -6,6 +6,7 @@ pagination:
   filter:
     - post
     - featured
+    - pages
     - all
 permalink: /tags/{{ tag }}/
 ---
@@ -14,7 +15,7 @@ permalink: /tags/{{ tag }}/
 <h1>Tagged “{{ tag }}”</h1>
 
 <ul role="list" class="blog-list">
-    {% for post in taglist | reverse %}
-        {% include 'article-snippet.njk' %}
-    {% endfor %}
+  {% for post in taglist | reverse %}
+    {% include 'article-snippet.njk' %}
+  {% endfor %}
 </ul>

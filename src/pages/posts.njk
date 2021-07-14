@@ -3,18 +3,23 @@ title: "Kevin's Blog Posts"
 menuItem: "Posts"
 pagination:
     data: collections.post
-    size: 1
-    alias: post
+    size: 2
+    alias: posts
     reverse: true
 permalink: "/posts/page/{{pagination.pageNumber + 1}}/index.html"
 ---
+{% set numberToDisplay = 5 %}
+{% set totalPages = pagination.pages.length %}
+{% set renderPages = renderPagination(pagination.pageNumber + 1, numberToDisplay, totalPages) %}
 
 <h3>
     Recent Blog Posts 
 </h3>
 
 <ul role="list" class="blog-list">
-    {% include 'article-snippet.njk' %}
+    {%- for post in posts -%}
+        {% include 'article-snippet.njk' %}
+    {%- endfor -%}
 </ul>
 {# {% if collections.post.length > (pagination.pageNumber + 1) * pagination.size %}
     <p class="my-4 text-right">
@@ -23,7 +28,10 @@ permalink: "/posts/page/{{pagination.pageNumber + 1}}/index.html"
 {% endif %} #}
 
 <p class="my-4 text-center">
-    {%- for index in renderPagination(pagination.pageNumber + 1, 6, collections.post.length) -%}
-        <a class="text-2xl mx-2 no-underline inline-block transform scale-100 {% if index === pagination.pageNumber + 1 %} text-skyBlue scale-150 {% endif %}" href="/posts/page/{{index}}">{{index}}</a>
+    {%- for index in renderPages -%}
+        <a class="text-2xl px-4 last-of-type:pr-0 no-underline inline-block transform scale-100 {% if index === pagination.pageNumber + 1 %} text-skyBlue scale-150 {% endif %}" href="/posts/page/{{index}}">{{index}}
+        </a>
+        {% if index === renderPages[numberToDisplay - 1] and index < totalPages %}
+            <span>...</span>{% endif %}
     {%- endfor -%}
 </p>

@@ -8,7 +8,11 @@ module.exports = function (eleventyConfig) {
     new Nunjucks.FileSystemLoader("src/_includes")
   );
 
+  // ADD NUNJUCKS GLOBALS (OBJECT REFERENCES)
   nunjucksEnvironment.addGlobal("renderPagination", renderPagination);
+  nunjucksEnvironment.addGlobal("isPostPage", (url) => {
+    return url.includes("/posts/page/");
+  });
 
   eleventyConfig.setLibrary("njk", nunjucksEnvironment);
 
@@ -34,7 +38,6 @@ module.exports = function (eleventyConfig) {
 
   // SHORT CODES
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
-  // eleventyConfig.addShortcode("renders", renderPagination);
 
   // FILTERS
   eleventyConfig.addFilter("postDate", (dateObj) => {
@@ -48,6 +51,7 @@ module.exports = function (eleventyConfig) {
   // PASSTHROUGH BUILD COPIES
   eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addPassthroughCopy("./src/admin");
+
   return {
     dir: {
       input: "src",
