@@ -18,15 +18,15 @@
   }
 
   h1 {
-    @apply text-6xl mb-6 leading-tight;
+    @apply text-5xl md:text-6xl mb-6 leading-tight;
   }
 
   h2 {
-    @apply text-5xl my-4;
+    @apply text-4xl md:text-5xl my-4;
   }
 
   h3 {
-    @apply text-4xl my-6 underline;
+    @apply text-3xl md:text-4xl my-6 underline;
   }
 
   h4 {
@@ -95,12 +95,24 @@
   min-height: calc(100vh - 116px);
 }
 
+h3.anchor {
+  margin-top: -100px;
+  padding-top: 100px;
+  text-decoration: none;
+}
+
+h3.anchor:hover a {
+  display: inline-block;
+}
+
+h3.anchor a {
+  @apply px-2 text-grayFont opacity-30 cursor-pointer hidden;
+}
+
 /* CODE BLOCK SYNTAX HIGHLIGHTING */
 
-pre[class*="language-"] a.copy-btn {
-  @apply bg-darkerBg text-grayFont font-bold absolute cursor-pointer py-1 px-4 border;
-  top: -32px;
-  right: 1px;
+button.copy-btn {
+  @apply bg-darkerBg text-grayFont font-bold cursor-pointer py-1 px-4 border mr-0 ml-auto block w-auto;
   border-color: #242629;
   border-bottom: 1px solid white;
 }
@@ -137,9 +149,8 @@ code[class*="language-"] {
 pre[class*="language-"] {
   @apply bg-darkerBg;
   padding: 1em;
-  margin: 2.25em 0;
-  /* overflow: auto; */
-  /* background: #1e1e1e; */
+  margin: 0 0 2.25em 0;
+  overflow: auto;
   border-radius: 4px;
   box-shadow: 0px 4px 8px -1px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -376,16 +387,41 @@ pre[class*="language-"] > code[class*="language-"] {
   z-index: 1;
 }
 
-.line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: inherit 0;
-  margin-top: 1em;
-  background: #f7ebc6;
-  box-shadow: inset 5px 0 0 #f7d87c;
-  z-index: 0;
-  pointer-events: none;
-  line-height: inherit;
-  white-space: pre;
+.highlight-line {
+  display: inline-block;
+
+  /* del, ins, mark default styles */
+  text-decoration: none;
+  color: inherit;
+}
+
+/* allow highlighting empty lines */
+.highlight-line:empty:before {
+  content: " ";
+}
+
+.highlight-line:not(:last-child) {
+  min-width: 100%;
+}
+.highlight-line .highlight-line:not(:last-child) {
+  min-width: 0;
+}
+
+/*
+ * Dark theme
+ */
+
+.highlight-line-isdir {
+  color: #b0b0b0;
+  background-color: #222;
+}
+.highlight-line-active {
+  background-color: #444;
+  background-color: hsla(0, 0%, 27%, 0.8);
+}
+.highlight-line-add {
+  background-color: #032c0a;
+}
+.highlight-line-remove {
+  background-color: #2c0303;
 }

@@ -18,29 +18,46 @@ layout: 'base.njk'
 <script>
     const codeBlocks = Array.from(document.querySelectorAll("pre[class*='language-']"));
     codeBlocks.forEach(el => {
-        const copyBtn = document.createElement("a");
+        const copyBtn = document.createElement("button");
         copyBtn
             .classList
             .add("copy-btn");
         copyBtn.innerText = "copy";
-        copyBtn.addEventListener("click", function (e) {
-            document.execCommand("copy");
-        });
-        copyBtn.addEventListener("copy", function (e) {
-            const btn = e.target;
-            e.preventDefault();
-            if (e.clipboardData) {
-                const codeText = btn.previousElementSibling.innerText;
-                e
-                    .clipboardData
-                    .setData("text/plain", codeText);
-                console.log(e.clipboardData.getData("text"))
-                btn.innerText = "copied";
+        copyBtn.addEventListener("click", async function (e) {
+            try {
+                await navigator
+                    .clipboard
+                    .writeText(e.target.nextElementSibling.innerText)
+
+                e.target.innerText = "copied";
                 setTimeout(() => {
-                    btn.innerText = "copy";
-                }, 2000)
+                    e.target.innerText = "copy";
+                }, 2000);
+            } catch (e) {
+                throw Error(`Error copying text: ${e}`);
             }
         });
-        el.appendChild(copyBtn);
+        el
+            .parentNode
+            .insertBefore(copyBtn, el);
+    });
+
+    const sections = Array.from(document.querySelectorAll("h3.anchor"));
+    debugger;
+    sections.forEach(s => {
+        const anchorBtn = document.createElement("a");
+        anchorBtn.innerText = '#';
+        anchorBtn.href = `#${s.id}`;
+        anchorBtn.addEventListener("click", async function (e) {
+            e.preventDefault();
+            try {
+                await navigator
+                    .clipboard
+                    .writeText(e.target.href)
+            } catch (e) {
+                throw Error(`Error copying text: ${e}`);
+            }
+        });
+        s.appendChild(anchorBtn);
     });
 </script>

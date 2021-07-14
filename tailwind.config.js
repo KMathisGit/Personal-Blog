@@ -7,6 +7,7 @@ delete colors.lightBlue;
 const purge = process.env.NODE_ENV === "production";
 
 module.exports = {
+  mode: "jit",
   purge: { enabled: purge, content: ["src/**/*.{html,njk}"] },
   darkMode: false, // or 'media' or 'class'
   theme: {

@@ -4,23 +4,23 @@ menuItem: "Home"
 layout: "base.njk"
 ---
 
-<div class="max-w-xl">
+<div class="w-full md:max-w-xl">
     <h1>Hi! I'm Kevin 👋</h1>
     <hr/>
-    <p>
+    <p class="text-2xl">
         I'm a full-stack web developer who enjoys helping others build awesome things on the web! 
     </p>
     <br/>
-    <p>
+    <p class="text-xl">
         If you want to know more about me:
 
-        <a href="https://kmathis-portfolio.vercel.app" title="My personal portfolio">
+        <a class="inline-block" href="https://kmathis-portfolio.vercel.app" title="My personal portfolio">
             My Portfolio
         </a>
     </p>
 </div>
 <br/>
-<h3>
+<h3 class="">
     Featured Blog Posts 
     {# <span class="inline-block transform rotate-90">&#10140;</span> #}</h3>
 <ul role="list" class="blog-list">
@@ -28,6 +28,6 @@ layout: "base.njk"
         {% include 'article-snippet.njk' %}
     {%- endfor -%}
 </ul>
-<p  class="my-4 text-right">
-    <a class="text-2xl" href="/posts">View all posts &#10140;</a>
+<p class="my-4 text-right">
+    <a class="text-2xl" href="/posts/page/1">View all posts &#10140;</a>
 </p>

@@ -8,28 +8,26 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
 
-  <body class="bg-gradient-to-br from-lightBg via-darkBg to-lightBg text-grayFont">
+  <body class="line-numbers bg-gradient-to-br from-lightBg via-darkBg to-lightBg text-grayFont">
     {% include 'navigation.njk' %}
-    <div class="content-container w-full mx-auto py-12 px-4 max-w-4xl sm:px-8">
+    <div class="content-container w-full mx-auto py-12 px-8 max-w-3xl lg:max-w-4xl">
       {{ content | safe }}
     </div>
     {% include 'footer.njk' %}
 
     {# Netlify re-direct script #}
     <script>
-      if (window.netlifyIdentity) {
-        window
-          .netlifyIdentity
-          .on("init", user => {
-            if (!user) {
-              window
-                .netlifyIdentity
-                .on("login", () => {
-                  document.location.href = "/admin/";
-                });
-            }
-          });
-      }
+      window
+        .netlifyIdentity
+        .on("init", user => {
+          if (!user) {
+            window
+              .netlifyIdentity
+              .on("login", () => {
+                document.location.href = "/admin/";
+              });
+          }
+        });
     </script>
 
   </body>
