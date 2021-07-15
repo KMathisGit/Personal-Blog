@@ -2,18 +2,18 @@
 layout: 'base.njk'
 ---
 
-<article class="blog-post">
-    <time class="text-grayFont">{{ date | postDate }}</time>
-    <h1>{{title}}</h1>
-    <figure>
-        <img src="{{ image }}" alt ="{{ imageAlt }}"/>
-        {% if imageAlt %}
-            <figcaption>
-                {{ imageAlt }}
-            </figcaption>
-        {% endif %}
-    </figure>
+<time class="text-grayFont">{{ date | postDate }}</time>
+<h1>{{title}}</h1>
+<figure>
+    <img class="mx-auto" src="{{ image }}" alt ="{{ imageAlt }}"/>
+    {% if imageAlt %}
+        <figcaption>
+            {{ imageAlt }}
+        </figcaption>
+    {% endif %}
+</figure>
 
+<article class="blog-post bg-lightBg text-lg my-6 px-6 py-4 rounded">
     {{ content | safe }}
 </article>
 

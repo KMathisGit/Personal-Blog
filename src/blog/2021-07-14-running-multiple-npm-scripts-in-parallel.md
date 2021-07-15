@@ -8,6 +8,8 @@ imageAlt:
 description: Ever needed to kick off multiple npm scipts and have them all running in parallel? This post covers the basics of understanding NPM scripts and how to achieve parallel execution - even if you are running Windows OS.
 ---
 
+<h3 class="anchor" id="working-with-npm">Working with NPM scripts</h3>
+
 Running NPM scripts is typically a straight forward process - you add a key value pairing to your package.json file. The key is the command term and the value is the actual command you want to execute.
 
 Here is a look at your typical `create-react-app` package.json
@@ -23,9 +25,9 @@ Here is a look at your typical `create-react-app` package.json
 
 To run any of these scripts you just write `npm run {script-key}`. So when you type in the infamous `npm run start` it is running `react-scripts start`.
 
-Now lets say that you want to execute multiple commands within a single script. The first question is whether these commands should run sequentially or in parallel.
+Now lets say that you want to execute multiple commands within a single script. How might this look?
 
-Let's say that you want to do a `build` and afterwards you want to do `start` to spin up your local dev environment. I know these 2 things don't make much sense to pair together but bear with me.
+Take the above example package.json and imagine you want to run both `build` and `start` (I know these 2 things don't make much sense to pair together but bear with me)
 
 To achieve this we would add to our package.json scripts the following:
 
@@ -39,7 +41,7 @@ To achieve this we would add to our package.json scripts the following:
     }
 ```
 
-This works and does what we expect it do, but now lets switch the order of these commands around:
+This works! It creates a build version of our application and once that is finished it starts up a development server. But now lets switch the order of these commands around and see what happens.
 
 ```json/4/3
     "scripts": {
@@ -52,9 +54,13 @@ This works and does what we expect it do, but now lets switch the order of these
     }
 ```
 
-Our script no longer does both commands - it only ever executes `react-scripts start`. This is because this command is continually running the dev server until it is terminated, and when it is, the entire scoped command is as well - so no build 😞.
+The development server starts up just fine but what happened to our build?
 
-So how can we solve this? Well turns out this is a very common issue and so there are easy ways to solve this.
+<h3 class="anchor" id="understanding-problem">Understanding the problem</h3>
+
+Our script no longer does both commands - it never executes `react-scripts build`. This is because `react-scripts start` command never finished. It is busy running the dev server which continues until it is terminated, and when we terminate it the entire scoped command is as well - so no build will ever take place.
+
+The problem is we are trying to execute these commands sequentially - run one and when it finishes run the next. But we need to run these in parallel. So how can we solve this? Well turns out this is a very common issue and so there are easy ways to solve this.
 
 <h3 class="anchor" id="unix-users">Unix users</h3>
 

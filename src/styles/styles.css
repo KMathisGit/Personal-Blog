@@ -26,7 +26,7 @@
   }
 
   h3 {
-    @apply text-3xl md:text-4xl my-6 underline;
+    @apply text-3xl md:text-4xl my-6;
   }
 
   h4 {
@@ -65,7 +65,7 @@
   }
 
   ul.blog-list li article h3 {
-    @apply my-0;
+    @apply my-0 underline;
   }
 
   ul.blog-list li article h3 span {
@@ -82,11 +82,13 @@
   }
 
   :not(pre) > code {
-    @apply bg-purple text-white py-0.5 px-3 rounded;
+    @apply bg-purple text-white px-2 rounded inline-block border border-lightBg;
+    font-size: inherit;
   }
 
   article.blog-post p {
-    @apply my-6 leading-8;
+    @apply my-6 leading-7;
+    font-size: inherit;
   }
 
   /* article.snippet img {
