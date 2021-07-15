@@ -47,6 +47,10 @@ layout: 'base.njk'
     const sections = Array.from(document.querySelectorAll("h3.anchor"));
     sections.forEach(s => {
         const anchorBtn = document.createElement("a");
+        const spanAfterEffect = document.createElement("span");
+        spanAfterEffect
+            .classList
+            .add("after-effect");
         anchorBtn.innerText = '#';
         anchorBtn.href = `#${s.id}`;
         /*anchorBtn.addEventListener("click", async function (e) {
@@ -59,5 +63,6 @@ layout: 'base.njk'
             }
         }); */
         s.appendChild(anchorBtn);
+        s.appendChild(spanAfterEffect);
     });
 </script>
