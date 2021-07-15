@@ -60,7 +60,7 @@ The development server starts up just fine but what happened to our build?
 
 Our script no longer does both commands - it never executes `react-scripts build`. This is because `react-scripts start` command never finished. It is busy running the dev server which continues until it is terminated, and when we terminate it the entire scoped command is as well - so no build will ever take place.
 
-The problem is we are trying to execute these commands sequentially - run one and when it finishes run the next. But we need to run these in parallel. So how can we solve this? Well turns out this is a very common issue and so there are easy ways to solve this.
+The problem is we are executing these commands sequentially - run one and when it finishes run the next. But we need to run these in parallel. So how can we solve this? Well turns out this is a very common issue and so there are easy ways to solve this.
 
 <h3 class="anchor" id="unix-users">Unix users</h3>
 
