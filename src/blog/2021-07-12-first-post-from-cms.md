@@ -7,7 +7,7 @@ tags:
   - featured
   - css
 date: 2021-07-12T01:36:06.142Z
-image: /assets/blog/article-1.jpg
+image: /assets/blog/article-1.webp
 imageAlt: An image of my laptop
 ---
 

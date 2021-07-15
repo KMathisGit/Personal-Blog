@@ -3,7 +3,7 @@ title: Running Multiple NPM Scripts in Parallel
 author: Kevin Mathis
 date: 2021-07-14
 tags: ["post", "featured", "javascript", "node"]
-image: /assets/blog/multiple-streams.jpg
+image: /assets/blog/multiple-streams.webp
 imageAlt:
 description: Ever needed to kick off multiple npm scipts and have them all running in parallel? This post covers the basics of understanding NPM scripts and how to achieve parallel execution - even if you are running Windows OS.
 ---

@@ -47,10 +47,6 @@
     text-decoration-color: rgb(7, 167, 247);
   }
 
-  hr {
-    @apply border-2 opacity-5 text-white rounded my-4;
-  }
-
   ul.blog-list li {
     @apply shadow-lg mb-10 p-6 bg-opacity-02 bg-white rounded-lg;
   }
@@ -122,8 +118,7 @@ h3.anchor a {
 }
 
 h3.anchor span.after-effect {
-  @apply bg-gradient-to-l from-skyBlue via-purple to-transparent inline-flex flex-grow rounded-tl-full rounded-br-full;
-  height: 4px;
+  @apply bg-gradient-to-l from-skyBlue via-purple to-transparent inline-flex flex-grow rounded-tl-full rounded-br-full h-1;
 }
 
 /* CODE BLOCK SYNTAX HIGHLIGHTING */

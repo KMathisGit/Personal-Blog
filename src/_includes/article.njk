@@ -5,7 +5,7 @@ layout: 'base.njk'
 <time class="text-grayFont">{{ date | postDate }}</time>
 <h1>{{title}}</h1>
 <figure>
-    <img class="mx-auto" src="{{ image }}" alt ="{{ imageAlt }}"/>
+    <img class="mx-auto w-full" src="{{ image }}" alt ="{{ imageAlt }}"/>
     {% if imageAlt %}
         <figcaption>
             {{ imageAlt }}
