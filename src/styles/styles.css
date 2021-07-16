@@ -87,6 +87,21 @@
     font-size: inherit;
   }
 
+  article.blog-post ul li {
+    @apply text-skyBlue relative;
+    padding-inline-start: 2rem;
+  }
+
+  article.blog-post ul li::before {
+    background: #fff;
+    content: "";
+    height: 4px;
+    width: 16px;
+    left: 0px;
+    position: absolute;
+    top: calc(50% - 2px);
+  }
+
   /* article.snippet img {
     @apply rounded;
   } */
