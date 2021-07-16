@@ -24,7 +24,7 @@ Any time we want to create styles for something we go to a corrsponding styleshe
 
 ![SCSS file structure](/assets/blog/scss-structure.webp "SCSS file structure")
 
-Adopting an architecture like this one allows you to continually manage styles easily as the size of you application continues to grow.
+Adopting an architecture like this one allows you to manage styles easily as the size of you application continues to grow.
 
 But for those out there that don't exactly like having to write styles in separate files have in recent times adopted what is known as CSS-in-JS.
 
@@ -37,7 +37,7 @@ The two most popular being:
 - Inline styling
 - Styled components
 
-Inline styling is a simple approach where we just write our use the `style` attribute and put our styles in directly. However we can be smart about this and create re-usable objects to pass in instead.
+Inline styling is a simple approach where we just write our styles as JS objects and take advantage of JSX by placing these objects in the `style` attribute of our elements.
 
 ```javascript
 const styles = {
