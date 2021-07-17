@@ -115,10 +115,10 @@ This changes background color on hover and applys more padding when the screen m
 
 Here are some of the other benefits you get with a utlity-first framework:
 
-- helps avoids specificty issues
-- avoid re-writing styles or overriding styles for certain situations
-- very clear which styles are applied to what elements
-- faster development
+- Helps avoids specificty issues.
+- Avoid re-writing styles or overriding styles for certain situations.
+- Very clear which styles are applied to what elements.
+- Rapid development and prototyping.
 
 And even if you are using one of these utility-first frameworks you can still create `base` styles so you don't re-write the same buttons classes on every button (that would be incredibly annoying).
 
