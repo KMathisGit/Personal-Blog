@@ -95,7 +95,7 @@ Check out the following [documentation](https://styled-components.com/docs/basic
 
 <h3 class="anchor" id="utility-first">Utility first frameworks</h3>
 
-Utility first frameworks have been getting a lot of attention recently, mainly due to [tailwindcss](https://www.tailwindcss.com). They hand you an already defined design system in which you can further customize if you wish or wish as is out of the box.
+Utility first frameworks have been getting a lot of attention recently, mainly due to [tailwindcss](https://www.tailwindcss.com). They hand you well-defined design system in which you can use as is or customize to your liking.
 
 These frameworks generate a plethora of classes for you to use on your elements. One down side that some people see in this approach is that your templates will in many cases have lots of classes on elements.
 
