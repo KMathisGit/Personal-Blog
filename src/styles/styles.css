@@ -132,7 +132,7 @@ h3.anchor a {
 }
 
 h3.anchor span.after-effect {
-  @apply bg-gradient-to-l from-skyBlue via-purple to-transparent inline-flex flex-grow rounded-tl-full rounded-br-full h-1;
+  @apply hidden sm:inline-flex bg-gradient-to-l from-skyBlue via-purple to-transparent flex-grow rounded-tl-full rounded-br-full h-1;
 }
 
 /* CODE BLOCK SYNTAX HIGHLIGHTING */

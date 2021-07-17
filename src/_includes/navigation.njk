@@ -4,11 +4,11 @@
     <div class="w-full px-4 max-w-3xl lg:max-w-5xl sm:px-8 mx-auto flex items-center justify-between">
         <a class="flex items-center" href="/">
             <img src="/assets/avatar.webp" alt="face photo" width="48px" height="48px" class="mr-6"/>
-            <span class="text-white text-xl hidden md:inline-block">Kevin Mathis</span>
+            <span class="text-white text-xl hidden sm:inline-block">Kevin Mathis</span>
         </a>
-        <ul class="list-none flex text-lg">
+        <ul class="list-none flex text-base sm:text-lg">
             <li>
-                <a class="cursor-pointer text-lg p-2 px-6 ml-4 hover:bg-lightBg {% if page.url === '/' %} text-white {% endif %}" {% if currentUrl === '/' %}aria-current="page"{% endif %} href="/">Home</a>
+                <a class="cursor-pointer p-2 px-6 ml-4 hover:bg-lightBg {% if page.url === '/' %} text-white {% endif %}" {% if currentUrl === '/' %}aria-current="page"{% endif %} href="/">Home</a>
             </li>
             <li>
                 <a class="cursor-pointer p-2 px-6 ml-4 hover:bg-lightBg {% if isPostPage(page.url) %} text-white {% endif %}"
@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li>
-                <a class="cursor-pointer text-lg p-2 px-6 ml-4 hover:bg-lightBg" href="https://kmathis-portfolio.vercel.app">About</a>
+                <a class="cursor-pointer p-2 px-6 ml-4 hover:bg-lightBg" href="https://kmathis-portfolio.vercel.app">About</a>
             </li>
 
             {# {% for page in collections.pages | reverse %}
