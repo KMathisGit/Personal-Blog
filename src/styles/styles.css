@@ -18,15 +18,15 @@
   }
 
   h1 {
-    @apply text-5xl md:text-6xl mb-6 leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight;
   }
 
   h2 {
-    @apply text-4xl md:text-5xl my-4;
+    @apply text-3xl md:text-4xl lg:text-5xl my-4;
   }
 
   h3 {
-    @apply text-3xl md:text-4xl my-6;
+    @apply text-2xl md:text-3xl lg:text-4xl my-6;
   }
 
   h4 {
@@ -83,8 +83,7 @@
   }
 
   article.blog-post p {
-    @apply my-6 leading-7;
-    font-size: inherit;
+    @apply my-6 leading-7 text-base md:text-lg;
   }
 
   article.blog-post ul li {
