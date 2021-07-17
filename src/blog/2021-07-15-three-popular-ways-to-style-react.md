@@ -94,3 +94,42 @@ Pretty awesome huh? And the really cool thing is that we can do `media-queries`,
 Check out the following [documentation](https://styled-components.com/docs/basics) if you want to learn more about this package!
 
 <h3 class="anchor" id="utility-first">Utility first frameworks</h3>
+
+Utility first frameworks have been getting a lot of attention recently, mainly due to [tailwindcss](https://www.tailwindcss.com). They hand you an already defined design system in which you can further customize if you wish or wish as is out of the box.
+
+These frameworks generate a plethora of classes for you to use on your elements. One down side that some people see in this approach is that your templates will in many cases have lots of classes on elements. Take a look at this example from the tailwindcss homepage (take notice of the md:**\_** classes):
+
+![tailwindcss example](/assets/blog/tailwindcss-example.webp "tailwindcss example")
+
+This is in my opinion actually not a bad thing, in fact I think the benefits greatly out weigh the downsides. It allows developers to focus on the template and understand exactly what styles are being applied rather than seeing what classes are used and then having to reference stylesheets to find out what styles are being applied. Also `tailwindcss` creates classes specifically for when we want to use media queries or different element states.
+
+```html
+<button class="bg-blue-800 text-white p-4 lg:p-8 hover:bg-blue-600"></button>
+```
+
+This changes background color on hover and applys more padding when the screen matches the lg media query break point (default: 1024px - but once again, this is all customizable!)
+
+Here are some of the other benefits you get with a utlity-first framework:
+
+- helps avoids specificty issues
+- avoid re-writing styles or overriding styles for certain situations
+- very clear which styles are applied to what elements
+- faster development
+
+And even if you are using one of these utility-first frameworks like `tailwindcss` you can still create `base` styles so you don't re-write the same buttons classes on every button (that would be incredibly annoying).
+
+```css
+h1 {
+  @apply text-5xl md:text-6xl mb-6 leading-tight;
+}
+```
+
+This is applying the classes above to any h1 element in our application. So we are still free to create our own styles and create `re-usable base` styles very easily.
+
+All in all, I must say that `tailwindcss` has done a fantastic job at building exactly what a utility-first framework should be. There is a lot to cover, which I plan to do so in a future post.
+
+<h3 class="anchor" id="wrapping-up">Wrapping it all up</h3>
+
+Overall my favorite approach currently is using a utility-first framework like `tailwindcss`. It just brings about a very enjoyable and non-intrusive developer experience. But before this, I was almost exclusively using `styled-components` which absolutely still have a great use and would be my choice if I wanted to do any sort of dynamic styling by utilizing javascript.
+
+I hope I have been able to share something new with you or have inspired you to try out a new approach to styling your next application!
