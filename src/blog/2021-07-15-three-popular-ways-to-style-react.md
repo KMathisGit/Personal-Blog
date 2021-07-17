@@ -66,7 +66,7 @@ Now typically you would be creating files dedicated to housing styles in and imp
 
 However the next approach solves the issue of not being able to write `media queries` and `psuedo-selectors`.
 
-With styled components, we write true CSS in our JS. How can this be done you ask? Well the easiest way is to install this package: `npm install --save styled-components` (there's also another popular choice called `emotion` that is very similar and loved by many)
+With styled components, we write true CSS in our JS. How can this be done you ask? Well the easiest way is to install [styled-components](https://styled-components.com/): `npm install --save styled-components` (there's also another popular choice called [emotion](https://emotion.sh/docs/@emotion/css) that is very similar and loved by many)
 
 Now that we have the package installed, just import it where you would like to use it and prepare to have your mind blown. So if we re-create our previous example for the h1 and h2 elements it would look something like:
 
@@ -97,11 +97,15 @@ Check out the following [documentation](https://styled-components.com/docs/basic
 
 Utility first frameworks have been getting a lot of attention recently, mainly due to [tailwindcss](https://www.tailwindcss.com). They hand you an already defined design system in which you can further customize if you wish or wish as is out of the box.
 
-These frameworks generate a plethora of classes for you to use on your elements. One down side that some people see in this approach is that your templates will in many cases have lots of classes on elements. Take a look at this example from the tailwindcss homepage (take notice of the md:**\_** classes):
+These frameworks generate a plethora of classes for you to use on your elements. One down side that some people see in this approach is that your templates will in many cases have lots of classes on elements.
+
+Take a look at this example from the tailwindcss homepage (take notice of the md: classes):
 
 ![tailwindcss example](/assets/blog/tailwindcss-example.webp "tailwindcss example")
 
-This is in my opinion actually not a bad thing, in fact I think the benefits greatly out weigh the downsides. It allows developers to focus on the template and understand exactly what styles are being applied rather than seeing what classes are used and then having to reference stylesheets to find out what styles are being applied. Also `tailwindcss` creates classes specifically for when we want to use media queries or different element states.
+This is in my opinion actually not a bad thing, in fact I think the benefits greatly out weigh the downsides. It allows developers to focus on the template and understand exactly what styles are being applied rather than seeing what classes are used and then having to reference stylesheets to find out what styles are being applied.
+
+It also creates classes specifically for when we want to use media queries or different element states.
 
 ```html
 <button class="bg-blue-800 text-white p-4 lg:p-8 hover:bg-blue-600"></button>
@@ -116,7 +120,7 @@ Here are some of the other benefits you get with a utlity-first framework:
 - very clear which styles are applied to what elements
 - faster development
 
-And even if you are using one of these utility-first frameworks like `tailwindcss` you can still create `base` styles so you don't re-write the same buttons classes on every button (that would be incredibly annoying).
+And even if you are using one of these utility-first frameworks you can still create `base` styles so you don't re-write the same buttons classes on every button (that would be incredibly annoying).
 
 ```css
 h1 {
