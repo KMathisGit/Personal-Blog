@@ -2,7 +2,7 @@
 title: Three Popular Ways to Style your React Apps
 author: Kevin Mathis
 date: 2021-07-15
-tags: ["post", "featured", "javascript", "react"]
+tags: ["post", "featured", "javascript", "react", "css"]
 image: /assets/blog/Three-pillars.webp
 imageAlt:
 description: When creating a react app there's many ways to solve how styling is handled. In this post I will walk through the 3 most popular methods and some of the pros and cons each of them bring about.
