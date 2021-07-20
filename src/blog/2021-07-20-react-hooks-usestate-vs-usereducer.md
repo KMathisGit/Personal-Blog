@@ -10,11 +10,11 @@ description: A question many React developers find themselves asking is what is 
 
 <h3 class="anchor" id="react-hooks">React hooks</h3>
 
-This article is going to be comparing a couple of [React Hooks](https://reactjs.org/docs/hooks-intro.html) and discussing how I determine when to use one over the other. If you are not familiar with [useState hook](https://reactjs.org/docs/hooks-reference.html#usestate) and [useReducer hook](https://reactjs.org/docs/hooks-reference.html#usereducer) I recommend checking them out before reading any further.
+This article is going to be comparing a couple of [React Hooks](https://reactjs.org/docs/hooks-intro.html) and discussing how to determine when to use one over the other. If you are not familiar with [useState hook](https://reactjs.org/docs/hooks-reference.html#usestate) and [useReducer hook](https://reactjs.org/docs/hooks-reference.html#usereducer) I recommend checking them out before reading any further.
 
 <h3 class="anchor" id="syntactical-differences">Syntactical differences</h3>
 
-Both `useState()` and `useReducer()` hooks are used to manage the state of components, however there are some slight differences between the two that help determine which one better fits a scenario. The first thing key difference is the way we call state updates for these two hooks.
+Both `useState()` and `useReducer()` hooks are used to manage the state of components, however there are some slight differences between the two that help determine which one better fits a scenario. Let's first look at the syntax of each hook and how we use them.
 
 Let's imagine a case where we have a rectangle object with properties describing the dimensions and color and compare the difference in syntax.
 
@@ -60,11 +60,11 @@ function Rectangle() {
 }
 ```
 
-So right away you may be thinking `useReducer()` requires more boilerplate code, which is true to some extent, however you will soon discover the benefits of it. Notice how the reducer function does not need to live inside the component. On the surface, this may not seem that beneficial but it really is and here is why:
+So right away you may be thinking `useReducer()` requires more boilerplate code, which is true to some extent, however you will soon discover the benefits of it. Notice how the reducer function does not need to live inside the component. On the surface, this may not seem very beneficial but it is and here are some reasons why:
 
 - Reduces overhead of state updates
 - Allows for re-usable, generic reducers
-- One function to rule all state updates
+- One Isolated function for all state updates
 
 <h3 class="anchor" id="reducing-overhead">Reducing overhead</h3>
 
@@ -104,9 +104,9 @@ A very powerful and under-used concept that `useReducer()` allows for is creatin
 
 Here is fantastic post about this concept by Kent Dodds: [Inversion of Control](https://kentcdodds.com/blog/inversion-of-control).
 
-<h3 class="anchor" id="one-function-rules-all">One function rules all</h3>
+<h3 class="anchor" id="isolated-function">Isolated update function</h3>
 
-The last great benefit on the list was how reducers give us one function in which all state updates are expected to be done within. This makes it much easier to do a few things, we mentioned managing overhead of state updates already. Another great benefit of this comes when we run into problems and need to debug. We have one single place to look if there is a bug when updating state - rather than many component methods which are calling `setState()`.
+The last great benefit on the list was how reducers give us one function in which all state updates are expected to be done within. This makes it much easier to do a few things, we mentioned managing overhead of state updates already. Another great benefit of this comes when we need to debug. Because our function is isolated from component lifecycle, we don't have to worry about stale references and we have one single place to look - rather than many methods inside of a component which are wrapping calls to `setState()`.
 
 <h3 class="anchor" id="what-about-usestate">So what about useState?</h3>
 
