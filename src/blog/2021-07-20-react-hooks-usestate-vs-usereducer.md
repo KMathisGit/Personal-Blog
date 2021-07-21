@@ -110,9 +110,9 @@ The last great benefit on the list was how reducers give us one function in whic
 
 <h3 class="anchor" id="what-about-usestate">So what about useState?</h3>
 
-At this point, I have only been mentioning the benefits of `useReducer()` - what about `useState()`?
+At this point, I have only been mentioning the benefits of `useReducer()` - what about `useState()`
 
-`useState()` is great whenever we don't have complex state. What determines if state is _complex_? To keep the definition simple, complex state is any object with many properties and requires multiple methods for updating state (rectangle example: setWidth, setHeight, and setColor).
+`useState()` is great whenever we don't have complex state. What determines if state is _complex_? To keep the definition simple, complex state is any object with many properties and requires multiple methods for updating state (rectangle example: setWidth, setHeight, and setColor)
 
 If the state you are managing is a [Primitive](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) then avoid `useReducer()`.
 This does not mean to break up your state into single primitive values, in fact, you should avoid doing so.
