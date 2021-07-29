@@ -82,6 +82,10 @@
     font-size: inherit;
   }
 
+  article.blog-post img {
+    margin: 0 auto;
+  }
+
   article.blog-post p {
     @apply my-6 leading-7 text-base md:text-lg;
   }
