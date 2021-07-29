@@ -28,7 +28,7 @@ Here is a very simple example of using a wave for your heading section.
 
 <h3 class="anchor" id="blobs">Blobs</h3>
 
-[Blob Maker](https://www.blobmaker.app/) is an awesome web application also created by [z-creative labs](https://zcreativelabs.com/). Right from inside the browser you can genarate all sorts of varying blob shapes. You've got control over the color, how many sides, how, and the roundness.
+[Blob Maker](https://www.blobmaker.app/) is an awesome web application also created by [z-creative labs](https://zcreativelabs.com/). Right from inside the browser you can genarate all sorts of varying blob shapes. You've got control over the color, how many sides, and the roundness.
 
 Here is a very simple example of using a blob to create some depth and fill out white space.
 
