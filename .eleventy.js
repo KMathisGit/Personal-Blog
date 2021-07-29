@@ -48,6 +48,10 @@ module.exports = function (eleventyConfig) {
     return tags.filter((tag) => !["post", "featured", "pages"].includes(tag));
   });
 
+  eleventyConfig.addFilter("top", (arr, num) => {
+    return arr.splice(0, num);
+  });
+
   // PASSTHROUGH BUILD COPIES
   eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addPassthroughCopy("./src/admin");
