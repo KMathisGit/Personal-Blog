@@ -1,9 +1,9 @@
 ---
-title: Mix things up with blobs and waves
+title: Spice things up with blobs and waves
 author: Kevin Mathis
 date: 2021-07-28
 tags: ["post", "featured", "html", "css"]
-image: /assets/blog/blobwave.png
+image: /assets/blog/blobwaves.jpg
 imageAlt:
 description: Short and sweet blog post that shows you how to easily generate blobs and waves that can drastically improve the look and feel of your websites.
 ---
