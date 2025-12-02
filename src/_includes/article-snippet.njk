@@ -1,14 +1,11 @@
 <li>
     <article class="snippet">
-        <div class="w-full md:w-4/6">
-            <h4>
+        <div class="w-full">
+            <h3>
                 <a href="{{ post.url }}">{{ post.data.title }}</a>
-            </h4>
-            <p class="text-lg">
-                {{ post.date | postDate }}
-            </p>
+            </h3>
             {% if post.data.tags %}
-                <div class="flex flex-wrap">
+                <div class="flex flex-wrap gap-2 my-2">
                     {% for tag in post.data.tags | postTags %}
                         <a href="/tags/{{tag}}" class="category-tag">
                             {{ tag }}
@@ -16,12 +13,25 @@
                     {%- endfor -%}
                 </div>
             {% endif %}
-            <hr class="rounded-tl-full rounded-br-full bg-gradient-to-l from-skyBlue via-purple to-transparent border-none h-1 my-4"/>
-            <p class="mb-4 text-lg h-28 overflow-hidden">{{ post.data.description }}</p>
-            <a href="{{ post.url }}" class="btn bg-purple">Continue Reading &#10140;</a>
+            {# <div class="flex gap-2 items-center">
+                <p>
+                    {{ post.date | postDate }}
+                </p>
+            </div> #}
+            {# <hr class="rounded-tl-full rounded-br-full bg-gradient-to-l from-skyBlue via-purple to-transparent border-none h-1 my-4"/> #}
+            <p class="mt-4 mb-6 text-lg overflow-hidden">{{ post.data.description }}</p>
+            <p>
+                <a href="{{ post.url }}">Read more →</a>
+            </p>
+
+            {# <a href="{{ post.url }}" class="btn bg-purple">Continue Reading &#10140;</a> #}
+
+            {# <em>
+                {{ post.date | postDate }}
+            </em> #}
         </div>
-        <div class="hidden items-center md:w-2/6 md:flex">
+        {# <div class="hidden items-center md:w-2/6 md:flex">
             <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" class="object-contain  "/>
-        </div>
+        </div> #}
     </article>
 </li>

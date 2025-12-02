@@ -6,25 +6,24 @@ layout: "base.njk"
 
 <div class="w-full md:max-w-xl">
     <h1>Hi! I'm Kevin 👋</h1>
-    <hr class="my-4 border-4 rounded opacity-10"/>
+    {# <hr class="my-4 border-2 rounded opacity-10"/> #}
     <p class="text-xl sm:text-2xl">
-        I'm a full-stack web developer who enjoys helping others build awesome things on the web! 
+        I'm a full-stack developer who enjoys building awesome things on the web and mobile!
     </p>
     <br/>
-    <p class="text-lg sm:text-xl">
-        If you want to know more about me:
+    <p class="text-lg">
+        If you want to know more about me check out
 
         <a class="inline-block" href="https://kmathis-portfolio.vercel.app" title="My personal portfolio">
-            My Portfolio
+            my portfolio website
         </a>
     </p>
 </div>
 <br/>
-<h3 class="">
-    Featured Blog Posts 
-    {# <span class="inline-block transform rotate-90">&#10140;</span> #}</h3>
+<br/>
+<br/>
 <ul role="list" class="blog-list">
-    {%- for post in collections.featured | reverse | top(3) -%}
+    {%- for post in collections.featured | reverse | top(4) -%}
         {% include 'article-snippet.njk' %}
     {%- endfor -%}
 </ul>

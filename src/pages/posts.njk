@@ -3,7 +3,7 @@ title: "Kevin's Blog Posts"
 menuItem: "Posts"
 pagination:
     data: collections.post
-    size: 2
+    size: 4
     alias: posts
     reverse: true
 permalink: "/posts/page/{{pagination.pageNumber + 1}}/index.html"
@@ -12,10 +12,10 @@ permalink: "/posts/page/{{pagination.pageNumber + 1}}/index.html"
 {% set totalPages = pagination.pages.length %}
 {% set renderPages = renderPagination(pagination.pageNumber + 1, numberToDisplay, totalPages) %}
 
-<h3>
-    Recent Blog Posts 
-</h3>
-
+<h2>
+    Blog Posts 
+</h2>
+<br/>
 <ul role="list" class="blog-list">
     {%- for post in posts -%}
         {% include 'article-snippet.njk' %}
