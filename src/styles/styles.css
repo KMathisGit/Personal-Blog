@@ -88,7 +88,7 @@
   }
 
   article.blog-post p {
-    @apply my-6 leading-7 text-base md:text-lg;
+    @apply my-6 leading-7 text-base;
   }
 
   article.blog-post ul li {
@@ -143,9 +143,11 @@ h3.anchor span.after-effect {
 /* CODE BLOCK SYNTAX HIGHLIGHTING */
 
 button.copy-btn {
-  @apply bg-darkerBg text-grayFont font-bold cursor-pointer py-1 px-4 border mr-0 ml-auto block w-auto;
+  @apply bg-darkerBg text-grayFont font-bold cursor-pointer py-1 px-4 border mr-0 ml-auto block w-auto hover:bg-darkBg;
   border-color: #242629;
   border-bottom: 1px solid white;
+  font-size: 14px;
+  line-height: 26px;
 }
 
 pre[class*="language-"],

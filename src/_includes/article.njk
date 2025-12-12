@@ -5,55 +5,55 @@ layout: 'base.njk'
 <time class="text-grayFont">{{ date | postDate }}</time>
 <h1>{{title}}</h1>
 <figure>
-    <img class="mx-auto w-full" src="{{ image }}" alt ="{{ imageAlt }}"/>
-    {% if imageAlt %}
-        <figcaption>
-            {{ imageAlt }}
-        </figcaption>
-    {% endif %}
+  <img class="mx-auto w-full" src="{{ image }}" alt ="{{ imageAlt }}"/>
+  {% if imageAlt %}
+    <figcaption>
+      {{ imageAlt }}
+    </figcaption>
+  {% endif %}
 </figure>
 
 <article class="blog-post bg-lightBg text-lg -mx-4 md:-mx-0 my-6 px-4 md:px-6 py-4 rounded">
-    {{ content | safe }}
+  {{ content | safe }}
 </article>
 
 <script>
-    const codeBlocks = Array.from(document.querySelectorAll("pre[class*='language-']"));
-    codeBlocks.forEach(el => {
-        const copyBtn = document.createElement("button");
-        copyBtn
-            .classList
-            .add("copy-btn");
-        copyBtn.innerText = "copy";
-        copyBtn.addEventListener("click", async function (e) {
-            try {
-                await navigator
-                    .clipboard
-                    .writeText(e.target.nextElementSibling.innerText)
+  const codeBlocks = Array.from(document.querySelectorAll("pre[class*='language-']"));
+  codeBlocks.forEach(el => {
+    const copyBtn = document.createElement("button");
+    copyBtn
+      .classList
+      .add("copy-btn");
+    copyBtn.innerText = "copy";
+    copyBtn.addEventListener("click", async function (e) {
+      try {
+        await navigator
+          .clipboard
+          .writeText(e.target.nextElementSibling.innerText)
 
-                e.target.innerText = "copied";
-                setTimeout(() => {
-                    e.target.innerText = "copy";
-                }, 2000);
-            } catch (e) {
-                throw Error(`Error copying text: ${e}`);
-            }
-        });
-        el
-            .parentNode
-            .insertBefore(copyBtn, el);
+        e.target.innerText = "copied";
+        setTimeout(() => {
+          e.target.innerText = "copy";
+        }, 2000);
+      } catch (e) {
+        throw Error(`Error copying text: ${e}`);
+      }
     });
+    el
+      .parentNode
+      .insertBefore(copyBtn, el);
+  });
 
-    const sections = Array.from(document.querySelectorAll("h3.anchor"));
-    sections.forEach(s => {
-        const anchorBtn = document.createElement("a");
-        const spanAfterEffect = document.createElement("span");
-        spanAfterEffect
-            .classList
-            .add("after-effect");
-        anchorBtn.innerText = '#';
-        anchorBtn.href = `#${s.id}`;
-        /*anchorBtn.addEventListener("click", async function (e) {
+  const sections = Array.from(document.querySelectorAll("h3.anchor"));
+  sections.forEach(s => {
+    const anchorBtn = document.createElement("a");
+    const spanAfterEffect = document.createElement("span");
+    spanAfterEffect
+      .classList
+      .add("after-effect");
+    anchorBtn.innerText = '#';
+    anchorBtn.href = `#${s.id}`;
+    /*anchorBtn.addEventListener("click", async function (e) {
             try {
                 await navigator
                     .clipboard
@@ -62,7 +62,7 @@ layout: 'base.njk'
                 throw Error(`Error copying text: ${e}`);
             }
         }); */
-        s.appendChild(anchorBtn);
-        s.appendChild(spanAfterEffect);
-    });
+    s.appendChild(anchorBtn);
+    s.appendChild(spanAfterEffect);
+  });
 </script>

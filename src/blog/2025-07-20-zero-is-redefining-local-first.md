@@ -23,7 +23,7 @@ If you’re used to a typical React stack, a more accurate comparison is to tool
 In [Zero](https://zero.rocicorp.dev/docs/introduction), we query the data we want, and that is all that gets synced. For example, if we query for a single todo item by ID:
 
 ```js
-    const [todo] = useQuery(z.query.todos.where('id', '=', id));
+const [todo] = useQuery(z.query.todos.where('id', '=', id));
 ```
 
 Zero will sync that single todo item into its local cache. It will not sync the entire list of todos unless we query for that explicitly.
@@ -41,7 +41,7 @@ Zero's `preload()` API looks like this:
 
 
 ```js
-    const preloadTodos = z.query.todos.limit(50).preload({ ttl: '1d' });
+const preloadTodos = z.query.todos.limit(50).preload({ ttl: '1d' });
 ```
 
 Preloading stores the data in the local cache (e.g. IndexedDB) and continually syncs, [but does not materialise it into JavaScript objects](https://zero.rocicorp.dev/docs/reading-data#preloading:~:text=Preloading%20stores%20the%20data%20in%20the%20local%20cache%20but%20does%20not%20materialize%20it%20into%20JavaScript%20objects) until an equivalent `useQuery` mounts. This helps keep memory usage low while still ensuring data is ready for fast display. To deactivate the preload syncing we can call `preloadTodos.cleanup()`.
@@ -49,7 +49,7 @@ Preloading stores the data in the local cache (e.g. IndexedDB) and continually s
 One pattern I've landed on is to export a `preload` function from each page in the app, which calls the preloaders for any queries on that page:
 
 ```js
-    // preloader for a page that renders todos and lists
+// preloader for a page that renders todos and lists
 export const preloadPage = () =>
   preloaders((z) => [
     z.query.lists.limit(50).preload({ ttl: '1d' }),
@@ -178,12 +178,12 @@ For teams already invested in their stack or building with portability in mind, 
 
 Overall, Zero introduces a very useful model for building modern apps, and here are the biggest reasons why:
 
-1. Partial sync lets us build apps like Reddit without overloading the local cache.
-2. Server as source-of-truth, aiding debugging and ensuring consistency across clients.
-3. Preload APIs help us improve performance for rendered data.
-4. Optimistic updates require a fraction of the boilerplate, thanks to isomorphic mutators.
-5. The UI stays reactive and consistent, with live updates from the server.
-6. No vendor lock-in or custom database, use your own stack.
-7. It's not local first. It's partial sync first. And for many projects, it's a better fit.
+- Partial sync lets us build apps like Reddit without overloading the local cache.
+- Server as source-of-truth, aiding debugging and ensuring consistency across clients.
+- Preload APIs help us improve performance for rendered data.
+- Optimistic updates require a fraction of the boilerplate, thanks to isomorphic mutators.
+- The UI stays reactive and consistent, with live updates from the server.
+- No vendor lock-in or custom database, use your own stack.
+- It's not local first. It's partial sync first. And for many projects, it's a better fit.
 
 *It is worth noting that Zero is still in alpha. We can follow their [roadmap](https://zero.rocicorp.dev/docs/roadmap#beta-q2-25) for progress towards the upcoming beta release. The current API is already very usable, but it is a fast-evolving project.*
