@@ -81,6 +81,7 @@
   :not(pre) > code {
     @apply bg-purple text-white px-2 rounded inline-block border border-lightBg;
     font-size: inherit;
+    line-height: 20px;
   }
 
   article.blog-post img {
