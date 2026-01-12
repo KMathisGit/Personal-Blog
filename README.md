@@ -2,6 +2,8 @@
 
 A simple, fast, and modern personal blog built with static site generation and deployed to Netlify.
 
+https://kmathis-blog.netlify.app/
+
 ## Tech Stack
 
 - [11ty](https://www.11ty.dev/) (Eleventy) - Static site generator
@@ -54,3 +56,4 @@ This compiles the site to the `_site` directory with optimized CSS.
 ## Deployment
 
 The site is automatically deployed to Netlify on push to the main branch. Netlify handles the build process using the `npm run build` command.
+
