@@ -93,15 +93,17 @@
   }
 
   article.blog-post ul li {
-    @apply text-skyBlue relative;
-    padding-inline-start: 2rem;
+    @apply relative;
+    padding-inline-start: 1.5rem;
+    font-size: 1rem;
+    color: #d0d0d0;
   }
 
   article.blog-post ul li::before {
     background: #fff;
     content: "";
-    height: 4px;
-    width: 16px;
+    height: 2px;
+    width: 12px;
     left: 0px;
     position: absolute;
     top: 12px;
