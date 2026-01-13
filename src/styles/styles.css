@@ -99,6 +99,16 @@
     color: #d0d0d0;
   }
 
+  article.blog-post ol li {
+    @apply relative;
+    font-size: 1rem;
+    color: #d0d0d0;    
+  }
+
+  article.blog-post ol {
+    padding-inline-start: 1.5rem;
+  }
+
   article.blog-post ul li::before {
     background: #fff;
     content: "";
@@ -460,4 +470,8 @@ pre[class*="language-"] > code[class*="language-"] {
 }
 .highlight-line-remove {
   background-color: #2c0303;
+}
+
+ol {
+  list-style: decimal;
 }
