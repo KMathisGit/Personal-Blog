@@ -53,7 +53,7 @@ layout: 'base.njk'
             .add("after-effect");
         anchorBtn.innerText = '#';
         anchorBtn.href = `#${s.id}`;
-        /*anchorBtn.addEventListener("click", async function (e) {
+        anchorBtn.addEventListener("click", async function (e) {
             try {
                 await navigator
                     .clipboard
@@ -61,7 +61,7 @@ layout: 'base.njk'
             } catch (e) {
                 throw Error(`Error copying text: ${e}`);
             }
-        }); */
+        });
         s.appendChild(anchorBtn);
         s.appendChild(spanAfterEffect);
     });
