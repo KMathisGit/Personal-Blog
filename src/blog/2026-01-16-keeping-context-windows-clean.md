@@ -1,5 +1,5 @@
 ---
-title: Keeping Your Context Windows Lean and Clean
+title: Keeping Context Windows Lean and Clean
 author: Kevin Mathis
 date: 2026-12-05
 tags: ["post", "featured", "ai", "coding"]
