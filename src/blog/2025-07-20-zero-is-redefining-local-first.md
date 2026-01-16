@@ -2,7 +2,7 @@
 title: Zero is More Than Local-First 
 author: Kevin Mathis
 date: 2025-07-20
-tags: ["post", "featured", "javascript"]
+tags: ["post", "featured", "javascript", "state management"]
 image: /assets/blog/zero.png
 imageAlt:
 description: Zero's partial sync approach gives us more control, better performance, and fewer headaches when building apps with lots of data. Here's why, and how I've been using it.

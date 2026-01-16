@@ -2,7 +2,7 @@
 title: Building Stegasaur - Hiding Files in Plain Sight
 author: Kevin Mathis
 date: 2026-10-11
-tags: ["post", "featured", "javascript"]
+tags: ["post", "featured", "javascript", "cryptography", "encryption"]
 image: /assets/blog/stegasaur.png
 imageAlt: Stegasaur steganography tool
 description: Building a web-based steganography tool that hides encrypted files and messages within images using LSB encoding and AES encryption.
