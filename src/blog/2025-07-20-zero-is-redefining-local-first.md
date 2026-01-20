@@ -12,11 +12,11 @@ description: Zero's partial sync approach gives us more control, better performa
 
 If you’ve worked with local‑first libraries before, you already know their promise: your app’s data is synced to the browser or device and stored locally, so all reads and writes happen instantly. When the network is available, the client syncs changes back to the server. The result is an app that feels fast, responsive, and fully functional offline.
 
-However, there’s a trade‑off. Many of these libraries try to sync everything, which sounds great in theory but quickly becomes impractical for apps with large datasets. Think of something like the Twitter “For You” tab—you wouldn’t want to pull the entire feed into the client just to display what’s relevant.
+However, there’s a trade‑off. Many of these libraries try to sync everything, which sounds great in theory but quickly becomes impractical for apps with large datasets. Think of something like the Twitter “For You” tab - you wouldn’t want to pull the entire feed into the client just to display what’s relevant.
 
 That’s where [Zero](https://zero.rocicorp.dev/docs/introduction) comes in. Zero is a sync engine, but its goal isn’t to make your app completely offline‑first. Instead, it focuses on syncing only what’s necessary to keep client and server data aligned. It’s a different philosophy: partial sync first, not local‑first.
 
-If you’re used to a typical React stack, a more accurate comparison is to tools like [TanStack Query](https://tanstack.com/query/docs) or [SWR](https://swr.vercel.app/). Zero acts as a query layer, keeping the server as the source of truth while providing built‑in caching, live updates, and a simpler way to handle revalidation—without the boilerplate of manually managing optimistic updates or mirroring server state on the client.
+If you’re used to a typical React stack, a more accurate comparison is to tools like [TanStack Query](https://tanstack.com/query/docs) or [SWR](https://swr.vercel.app/). Zero acts as a query layer, keeping the server as the source of truth while providing built‑in caching, live updates, and a simpler way to handle revalidation without the boilerplate of manually managing optimistic updates or mirroring server state on the client.
 
 <h3 class="anchor" id="partial-sync">Partial Sync</h3>
 

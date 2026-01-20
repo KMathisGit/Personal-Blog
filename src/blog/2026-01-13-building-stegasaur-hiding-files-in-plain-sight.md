@@ -18,7 +18,7 @@ The journey of building Stegasaur taught me a lot about how images store data, h
 
 Steganography is the practice of concealing information within other non-secret data. The word itself comes from Greek: "steganos" (covered) and "graphein" (writing). Unlike cryptography which scrambles data to make it unreadable, steganography hides data so that observers don't even know secret information exists.
 
-In digital steganography, we can hide data in various media files—images, audio, video, or even text. For Stegasaur, I focused on images because they're ubiquitous and offer plenty of space to hide data without noticeable visual changes.
+In digital steganography, we can hide data in various media files such as images, audio, video, or even text. For Stegasaur, I focused on images because they're ubiquitous and offer plenty of space to hide data without noticeable visual changes.
 
 The key insight is that image files contain far more data than our eyes can perceive. By making tiny, imperceptible changes to pixel values, we can embed our own data without anyone noticing.
 
@@ -43,7 +43,7 @@ function encodeBit(alphaValue, bit) {
 
 <h3 class="anchor" id="encryption-first">Encryption First</h3>
 
-Before hiding anything, we need to encrypt it. Security through obscurity alone isn't enough—if someone suspects steganography and extracts the hidden bits, the data should still be unreadable without the secret key.
+Before hiding anything, we need to encrypt it. Security through obscurity alone isn't enough. If someone suspects steganography and extracts the hidden bits, the data should still be unreadable without the secret key.
 
 Stegasaur uses the Web Crypto API with AES-CBC (Advanced Encryption Standard in Cipher Block Chaining mode) for encryption. Here's what happens:
 
@@ -152,7 +152,7 @@ export function encodePayloadInAlpha(pixelBytes, payload) {
 }
 ```
 
-The random filler data is important—it ensures that unused alpha channels don't all have the same LSB value, which would create a detectable pattern.
+The random filler data is important - it ensures that unused alpha channels don't all have the same LSB value, which would create a detectable pattern.
 
 <h3 class="anchor" id="decoding-and-decryption">Decoding and Decryption</h3>
 
@@ -247,7 +247,7 @@ Building Stegasaur taught me several valuable lessons:
 
 <h3 class="anchor" id="conclusion">Wrapping Up</h3>
 
-Steganography is a fascinating field that combines cryptography, image processing, and creative problem-solving. Stegasaur demonstrates that you don't need complicated server infrastructure or low-level languages to implement these concepts—modern web technologies are more than capable.
+Steganography is a fascinating field that combines cryptography, image processing, and creative problem-solving. Stegasaur demonstrates that you don't need complicated server infrastructure or low-level languages to implement these concepts.
 
 The project is open source and available on GitHub. Whether you want to hide secret messages in memes or just learn about steganography, I hope Stegasaur serves as a useful tool and learning resource.
 
