@@ -4,8 +4,8 @@ layout: 'base.njk'
 
 <time class="text-grayFont">{{ date | postDate }}</time>
 <h1>{{title}}</h1>
-<figure>
-    <img class="mx-auto w-full" src="{{ image }}" alt ="{{ imageAlt }}"/>
+<figure class="bg-[#FFFFFF04]">
+    <img class="mx-auto" src="{{ image }}" alt ="{{ imageAlt }}"/>
     {% if imageAlt %}
         <figcaption>
             {{ imageAlt }}
