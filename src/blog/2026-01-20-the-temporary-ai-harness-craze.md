@@ -3,7 +3,7 @@ title: The Temporary AI Harness Craze
 author: Kevin Mathis
 date: 2026-01-03
 tags: ["post", "featured", "ai", "coding"]
-image: /assets/blog/ai_harness.png
+image: /assets/blog/ai_harness.jpg
 imageAlt: AI harness framework visualization
 description: Developers are fascinated with AI harnesses, believing different frameworks dramatically affect model output. But this obsession is likely a temporary phenomenon of AI's early stages.
 ---
