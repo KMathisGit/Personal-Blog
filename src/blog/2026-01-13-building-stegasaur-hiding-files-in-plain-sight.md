@@ -1,7 +1,7 @@
 ---
 title: Building Stegasaur - Hiding Files in Plain Sight
 author: Kevin Mathis
-date: 2026-10-11
+date: 2025-10-11
 tags: ["post", "featured", "javascript", "cryptography", "encryption"]
 image: /assets/blog/stegasaur.png
 imageAlt: Stegasaur steganography tool

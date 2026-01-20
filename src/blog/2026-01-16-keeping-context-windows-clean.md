@@ -1,7 +1,7 @@
 ---
 title: Keeping Context Windows Lean and Clean
 author: Kevin Mathis
-date: 2026-12-05
+date: 2025-12-05
 tags: ["post", "featured", "ai", "coding"]
 image: /assets/blog/context_window.jpg
 imageAlt: AI context window visualization
